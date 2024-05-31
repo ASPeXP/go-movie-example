@@ -4,8 +4,8 @@ import (
 	"context"
 	"sync"
 
-	"github.com/aspexp/metadata/internal/repository"
-	"github.com/aspexp/metadata/pkg/model"
+	"github.com/aspexp/movieexample/metadata/internal/repository"
+	"github.com/aspexp/movieexample/metadata/pkg/model"
 )
 
 // repository define a memory movie metadata repository.
@@ -28,7 +28,7 @@ func (r *Repository) Get(_ context.Context, id string) (*model.Metadata, error) 
 	}
 	return m, nil 
 }
-//put adds movie metadat for a given movie id.
+//put adds movie metadata for a given movie id.
 func (r *Repository) Put (_ context.Context, id string, metadata *model.Metadata) error {
 	r.Lock()
 	defer r.Unlock()
